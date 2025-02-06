@@ -1,0 +1,84 @@
+A) CRUD for postgresql database
+
+\\CREATE
+INSERT INTO my_client (
+	name, slug, is_project, self_capture, client_prefix, client_logo, adress, phone_number, city
+
+)
+VALUES (
+	'jessenName', 'jessenSlug' '0', '1', 'qwer', 'no-image.jpg', NULL, NULL, NULL
+
+)
+
+\\READ
+SELECT*FROM my_client
+
+\\UPDATE
+UPDATE my_client
+set
+	address = 'jakartaAdress',
+	phone_number = 08111555333,
+	city = 'jakartaCity'
+WHERE id = 1;
+
+\\DELETE
+DELETE FROM my_client WHERE name = 'jessenName';
+
+
+_________
+class TagCrudController extends CrudController
+{
+    ...
+    protected function setupListOperation()
+    {
++       CRUD::column('name')->type(text);
++       CRUD::column('slug')->type(text);
++       CRUD::column('is_project')->type(text);
++       CRUD::column('self_capture')->type(text);
++       CRUD::column('client_prefix')->type(text);
++       CRUD::column('client_logo')->type(text);
++       CRUD::column('adress')->type(text);
++       CRUD::column('phone_number')->type(text);
++       CRUD::column('city')->type(text);
++       CRUD::column('created_at')->type(text);
++       CRUD::column('updated_at')->type(text);
++       CRUD::column('deleted_at')->type(text);
+    }
+
+    protected function setupCreateOperation()
+    {
+        CRUD::setValidation(TagRequest::class);
++       CRUD::column('name')->type(text);
++       CRUD::column('slug')->type(text);
++       CRUD::column('is_project')->type(text);
++       CRUD::column('self_capture')->type(text);
++       CRUD::column('client_prefix')->type(text);
++       CRUD::column('client_logo')->type(text);
++       CRUD::column('adress')->type(text);
++       CRUD::column('phone_number')->type(text);
++       CRUD::column('city')->type(text);
++       CRUD::column('created_at')->type(text);
++       CRUD::column('updated_at')->type(text);
++       CRUD::column('deleted_at')->type(text);
+    }
+}
+
+
+
+
+
+
+
+______
+B) UPDATE my_client
+set
+	client_logo = '[].jpg'
+WHERE id = 1;
+
+
+
+______
+E) UPDATE my_client
+set
+	deleted_at = '2025-02-06 10:00:00'
+WHERE id = 1;
