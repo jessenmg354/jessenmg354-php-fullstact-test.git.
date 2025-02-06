@@ -1,0 +1,36 @@
+A) CRUD for postgresql database
+
+\\CREATE
+INSERT INTO my_client (
+	name, slug, is_project, self_capture, client_prefix, client_logo, adress, phone_number, city
+
+)
+VALUES (
+	'jessenName', 'jessenSlug' '0', '1', 'qwer', 'no-image.jpg', NULL, NULL, NULL
+
+)
+s
+\\Read
+SELECT*FROM my_client
+
+\\Update
+UPDATE my_client
+set
+	address = 'jakartaAdress',
+	phone_number = 08111555333,
+	city = 'jakartaCity'
+WHERE id = 1;
+
+\\DELETE
+DELETE FROM my_client WHERE name = 'jessenName';
+
+
+B) UPDATE my_client
+set
+	client_logo
+WHERE id = 1;
+
+E) UPDATE my_client
+set
+	deleted_at = '2025-02-06 10:00:00'
+WHERE id = 1;
